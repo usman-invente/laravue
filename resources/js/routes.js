@@ -1,5 +1,7 @@
 import Login from './components/LoginComponent.vue';
-import Dashboard from './components/DashboardComponent.vue';
+import AdminDashboard from './components/AdminDashboardComponent.vue';
+import UserDashboardComponent from './components/UserDashboardComponent.vue';
+
 export const routes = [
     {
         path: '/',
@@ -7,8 +9,13 @@ export const routes = [
         
     },
     {
+        path: '/admin/dashboard',
+        component: AdminDashboard
+
+    },
+    {
         path: '/dashboard',
-        component: Dashboard
+        component: UserDashboardComponent
 
     }
 

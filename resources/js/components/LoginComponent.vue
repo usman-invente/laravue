@@ -55,8 +55,28 @@
 
                 login(this.$data.form)
                     .then((res) => {
+
+                        /*
+                        ** Admin Login
+                        ** Admin Role is 1
+                        ** Admin will Generate  from seeder  database/seeds/UsersTableDataSeeder 
+                        */
+
+                       if(res.user.role_id == 1)
+                       {
+                          this.$router.push({path: '/admin/dashboard'});
+                       }
+
+                        /*
+                        ** User Login
+                        */
+
+                       else if(res.user.role_id == 2){
+
+                           this.$router.push({path: '/dashboard'});
+                       }
+
                         this.$store.commit("loginSuccess", res);
-                        this.$router.push({path: '/dashboard'});
                     })
                     .catch((error) => {
                         this.$store.commit("loginFailed", {error});

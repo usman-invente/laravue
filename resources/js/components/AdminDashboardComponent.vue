@@ -1,5 +1,5 @@
 <template>
-    <p>this is dashboard</p>
+    <p>this is  admin dashboard</p>
 </template>
 
 <script>
